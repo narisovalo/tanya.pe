@@ -119,9 +119,17 @@ footer .links{display:flex;flex-direction:column;gap:6px}
 .lb .note{font-size:12px;opacity:.7;margin-top:10px}
 .lb .x,.lb .nav{position:absolute;font-size:26px;width:48px;height:48px;display:flex;align-items:center;justify-content:center}
 .lb .x{top:8px;right:8px}.lb .prev{left:6px;top:50%}.lb .next{right:346px;top:50%}
-@media(max-width:860px){.lb{grid-template-columns:1fr;grid-template-rows:minmax(0,1fr) auto;overflow:auto}
-  .lb .stage{padding:56px 12px 30px}.lb .stage img{max-height:60vh}.lb .info{border-left:0;border-top:1.5px solid var(--ink);padding:20px}
-  .lb .next{right:6px;top:30vh}.lb .prev{top:30vh}}
+@media(max-width:860px){
+  .lb.open{display:block;overflow-y:auto;-webkit-overflow-scrolling:touch}
+  .lb .stage{display:block;padding:60px 16px 12px;text-align:center}
+  .lb .stage figure{display:block!important}
+  .lb .stage img{display:block;margin:0 auto;width:auto;height:auto;max-width:100%;max-height:58vh;box-shadow:2px 4px 16px #0002}
+  .lb .info{border-left:0;border-top:1px solid #0002;margin:0 16px;padding:18px 4px 40px}
+  .lb h3{font-size:24px}
+  .lb .x{position:fixed;top:10px;right:10px;background:var(--paper);border-radius:50%}
+  .lb .nav{position:absolute;top:calc(30vh + 30px);background:#f3efe4cc;border-radius:50%;width:40px;height:40px;font-size:20px}
+  .lb .prev{left:6px}.lb .next{right:6px}
+}
 </style>
 </head>
 <body>
