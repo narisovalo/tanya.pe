@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tanya Pé</title>
-<meta name="description" content="Tanya Pé is a visual artist working primarily in oil painting. Born 1978, Moscow. Works between Bangkok and Lisbon.">
+<meta name="description" content="Tanya Pé is a visual artist working primarily in oil painting. Born in Moscow. Works between Bangkok and Lisbon.">
 <meta property="og:title" content="Tanya Pé">
 <meta property="og:image" content="c1.jpg">
 <style>
@@ -42,6 +42,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .ransom .word span{display:inline-block;padding:.06em .14em .1em;box-shadow:2px 3px 0 #0002}
 .hero .note{font-family:var(--hand);font-size:clamp(34px,4vw,52px);color:var(--red);transform:rotate(-4deg);margin:22px 0 0 8%;display:inline-block}
 .hero .note svg{vertical-align:middle;margin-left:6px}
+.hero p.introNote{margin-top:14px;opacity:.85}.hero p.introNote a{color:inherit;text-decoration:underline;text-underline-offset:3px}
 .hero p.intro{max-width:46ch;margin-top:26px;font-size:15px}
 
 /* chapters */
@@ -63,7 +64,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .piece:hover{transform:rotate(0) scale(1.03)!important;z-index:5}
 .piece .frame{background:#fff;padding:10px;box-shadow:3px 5px 14px #0003}
 .piece.oil .frame{padding:0;background:none}
-.piece img{width:100%}
+.piece img{width:100%;height:auto}
 .piece::before,.piece::after{content:"";position:absolute;width:74px;height:22px;background:#f5f0dcb8;box-shadow:0 1px 2px #0001;z-index:2}
 .piece::before{top:-9px;left:16%;transform:rotate(-8deg)}
 .piece::after{top:-9px;right:14%;transform:rotate(7deg)}
@@ -71,7 +72,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .sticker{display:inline-block;background:#fff;font-size:12px;line-height:1.4;padding:5px 9px;margin-top:10px;box-shadow:1px 2px 0 #0002;transform:rotate(-1.5deg)}
 .sticker b{font-weight:600}
 .w-l{width:min(38%,460px)}.w-m{width:min(28%,340px)}.w-s{width:min(20%,240px)}.w-q{width:auto}.w-q img{height:clamp(200px,24vw,330px);width:auto!important;max-width:100%}
-@media(max-width:760px){.w-l{width:88%}.w-m{width:62%}.w-s{width:46%}.w-q{width:auto;max-width:46%}.w-q img{height:auto!important;width:100%!important}.collage{gap:28px 14px}}
+@media(max-width:760px){.w-l{width:88%}.w-m{width:62%}.w-s{width:46%}.w-q{width:auto;max-width:46%}.w-q img{height:auto!important;width:100%!important}.collage{gap:28px 14px}#mono .piece{width:44%}}
 
 /* visit */
 #visit{background:var(--red);color:#fff;padding:80px 18px;position:relative;overflow:hidden}
@@ -145,6 +146,7 @@ footer .links{display:flex;flex-direction:column;gap:6px}
   <img class="logo" id="logo" src="logo_white.png" alt="TANYA PÉ">
 
   <p class="intro" data-i="intro">Paintings, works on paper and monotypes. Russia-born, working between Lisbon and Bangkok.</p>
+  <p class="intro introNote" data-i="intro_note" data-html></p>
 </header>
 
 <main id="works"></main>
@@ -201,7 +203,7 @@ const BOOKING_URL=""; // paste the Google Calendar booking page link here
 const src=(id,t)=>(typeof IMG!=="undefined")?IMG[id+(t?"_t":"")]:`${id}${t?"_t":""}.jpg`;
 
 const T={
- en:{nav_works:"Works",nav_visit:"Studio visit",nav_about:"About",nav_contact:"Contact",
+ en:{nav_works:"Works",intro_note:'The works shown here are available or were sold recently. To see what is in progress, <a href="#visit">book a studio visit</a>.',nav_visit:"Studio visit",nav_about:"About",nav_contact:"Contact",
   intro:"Tanya Pé is a visual artist working primarily in oil painting. Her practice explores how thoughts, fears, and imagined worlds shape our perception of reality.",
   stamp:"<div>GET A<br>UNIQUE<br>PIECE</div>",
   visit_k:"Studio visit",visit_h:"Visit the studio online",
@@ -209,14 +211,15 @@ const T={
   visit_offer:"Book a visit and get a unique piece from me.",
   visit_btn:"Book a studio visit",visit_or:"Or write to",
   about_h:"About",statement_k:"Artist Statement",
-  statement:`<p>Fish are thoughts. They surface, gather, disperse. They operate outside intention or control.</p><p>We construct private hallucinations from our thoughts and misconceptions, then inhabit them as reality.</p><p>My paintings reveal the magnificence of these imagined worlds.</p><p>I work primarily in oil, building images layer by layer. My practice also includes monotype and object-based work. Each series emerges from a particular situation or encounter.</p>`,
-  cv_sub:"Born 1978, Moscow. Works between Bangkok and Lisbon.",
+  statement:`<p>I keep returning to the thought of how limited human thinking is and how hard it is for people to step outside what we are used to calling normal, outside our own norm. Each of us lives inside our own context, our own experience, and this is why we so often misunderstand each other.</p><p>In my work fish are thoughts. They move at random and follow no particular order, but we tend to see signs in our thoughts, treat them as axioms and gradually build from them inner spaces that we then take for reality. Sometimes this is frightening, and sometimes it turns out simply wonderful.</p><p>I put the fish where they do not belong, and I paint mostly in oil, in layers, the way our picture of the world is built. Shorter series in other materials appear when a particular situation calls for it. Lately these have been small works on paper in vinyl paint and ceramics.</p>`,
+  cv_sub:"Born in Moscow. Works between Bangkok and Lisbon.",
   enquire:"DM on Instagram",or_email:"or email",request:"Price on request",sold:"Sold",located:"Located in",
   cv:[["Solo Exhibitions & Projects",[["2023","Is Art Important?, participatory pop-up exhibition, Moscow (two locations)"]]],
    ["Group Exhibitions",[["2022","Goes Out the Light, RAMT Centenary Exhibition, curated by Daria Onatskaya, Moscow"],["2021","Without Borders, Gartallery, curated by Daria Onatskaya, Moscow"]]],
+   ["Collaborative Projects",[["2026","Ceramic figure for DANCEM, participatory installation by Carla R. Santos, Lisbon (February–July)"]]],
    ["Public Collections",[["","Russian Academic Youth Theatre (RAMT), Moscow, Russia"]]],
    ["Education",[["2021","Rodchenko Moscow School of Photography and Multimedia, Moscow"],["1998–2003","BA in Museology, Russian State University for the Humanities, Moscow"]]]]},
- ru:{nav_works:"Работы",nav_visit:"Визит в мастерскую",nav_about:"О художнице",nav_contact:"Контакты",
+ ru:{nav_works:"Работы",intro_note:'На сайте представлены работы, доступные для покупки или недавно проданные. Чтобы увидеть то, что сейчас в процессе, <a href="#visit">запишитесь на визит в мастерскую</a>.',nav_visit:"Визит в мастерскую",nav_about:"О художнице",nav_contact:"Контакты",
   intro:"Художница Tanya Pé работает в основном с масляной живописью. Её практика о том, как мысли, страхи и воображаемые миры формируют наше восприятие реальности.",
   stamp:"<div>УНИКАЛЬНАЯ<br>РАБОТА<br>В ПОДАРОК</div>",
   visit_k:"Визит в мастерскую",visit_h:"Приходите в мастерскую онлайн",
@@ -224,11 +227,12 @@ const T={
   visit_offer:"Запишитесь на визит и получите от меня уникальную работу.",
   visit_btn:"Записаться на визит",visit_or:"Или напишите на",
   about_h:"О художнице",statement_k:"Artist Statement",
-  statement:`<p>Рыбы — это мысли. Они всплывают, собираются, рассеиваются. Они действуют вне намерения и контроля.</p><p>Из мыслей и заблуждений мы строим частные галлюцинации, а потом живём в них как в реальности.</p><p>Мои картины показывают великолепие этих воображаемых миров.</p><p>Я работаю в основном маслом и строю изображение слой за слоем. Также работаю с монотипией и объектами. Каждая серия рождается из конкретной ситуации или встречи.</p>`,
-  cv_sub:"Родилась в 1978 году в Москве. Работает между Бангкоком и Лиссабоном.",
+  statement:`<p>Я постоянно возвращаюсь к мысли о том, насколько ограничено человеческое мышление и как трудно людям выйти за пределы того, что мы привыкли считать нормальным, за пределы нашей нормы. Каждый из нас живёт внутри своего контекста, своего опыта, и поэтому мы так часто не понимаем друг друга.</p><p>В моих работах рыбы — это мысли. Они движутся случайно и не подчиняются никакому порядку, но мы склонны видеть в своих мыслях знаки, считать их аксиомами и постепенно строим из них внутренние пространства, которые потом принимаем за реальность. Иногда это пугает, а иногда получается просто восхитительно.</p><p>Я помещаю рыб туда, где им не место, и пишу в основном маслом, слоями, так же как складывается наше представление о мире. Короткие серии в других материалах появляются, когда того требует конкретная ситуация. В последнее время это небольшие графические работы на бумаге виниловой краской и керамика.</p>`,
+  cv_sub:"Родилась в Москве. Работает между Бангкоком и Лиссабоном.",
   enquire:"Написать в Instagram",or_email:"или почта",request:"Цена по запросу",sold:"Продано",located:"Находится в",
   cv:[["Персональные выставки и проекты",[["2023","«Нужно ли искусство?», партиципаторная поп-ап выставка, Москва (две площадки)"]]],
    ["Групповые выставки",[["2022","«Гаснет в зале свет», выставка к 100-летию РАМТа, куратор Дарья Онацкая, Москва"],["2021","«Без границ», галерея Gartallery, куратор Дарья Онацкая, Москва"]]],
+   ["Совместные проекты",[["2026","Керамическая фигура для DANCEM, партиципаторной инсталляции Карлы Р. Сантуш, Лиссабон (февраль–июль)"]]],
    ["Публичные коллекции",[["","Российский академический молодёжный театр (РАМТ), Москва"]]],
    ["Образование",[["2021","Московская школа фотографии и мультимедиа им. А. Родченко"],["1998–2003","РГГУ, бакалавр музеологии, Москва"]]]]}
 };
@@ -239,17 +243,17 @@ let lang="en",order=[],cur=0;
 const L=o=>o==null?"":(typeof o==="string"?o:(o[lang]||o.en));
 const title=w=>w.t?L(w.t):(lang==="ru"?"Без названия № ":"Untitled № ")+w.n;
 const size=w=>lang==="ru"?w.z.replace(/cm/g,"см"):(w.z+(w.zi?" ("+w.zi+")":""));
-const price=w=>w.st==="sold"?'<span style="color:#e4361f">●</span> '+T[lang].sold:(w.p!=null&&w.p<=500?"€"+w.p:T[lang].request);
+const price=w=>w.st==="sold"?'<span style="color:#e4361f">●</span> '+T[lang].sold:T[lang].request;
 
 function build(){
   
   const main=document.getElementById("works");order=[];let k=0;
   main.innerHTML=SERIES.map(s=>{
-    const items=WORKS.filter(w=>w.s===s.k);
+    const items=WORKS.filter(w=>w.s===s.k).map((w,i)=>[w,i]).sort((a,b)=>((a[0].n||0)-(b[0].n||0))||(a[1]-b[1])).map(x=>x[0]);
     return `<section class="chapter ${s.cls}" id="${s.k}"><h2>${L(s)}</h2><div class="attr">${L(s.attr)}</div>
       <p class="desc">${lang==="ru"?s.dru:s.den}</p>${s.photo?`<figure class="seriesphoto"><img src="${src(s.photo)}" alt=""><figcaption>${s.photocap||(lang==="ru"?"Серия целиком":"The series installed")}</figcaption></figure>`:""}<div class="collage">${items.map(w=>{order.push(w.id);
         return `<button class="piece w-${w.w}${w.oil?" oil":""}" style="transform:rotate(${ROT[k++%8]}deg)" data-id="${w.id}">
-          <div class="frame"><img src="${src(w.id,1)}" alt="${title(w)}" loading="lazy"></div>
+          <div class="frame"><img src="${src(w.id,1)}" alt="${title(w)}" loading="lazy"${(typeof DIMS!=="undefined"&&DIMS[w.id])?` width="${DIMS[w.id][0]}" height="${DIMS[w.id][1]}"`:""}></div>
           <span class="sticker"><b>${title(w)}</b> · ${price(w)}</span></button>`}).join("")}</div></section>`}).join("");
   main.querySelectorAll(".piece").forEach(b=>b.onclick=()=>openLb(b.dataset.id));
   document.getElementById("cvBody").innerHTML=T[lang].cv.map(([h,rows])=>`<h3>${h}</h3><ul>${rows.map(([y,t])=>`<li><span>${y}</span><span>${t}</span></li>`).join("")}</ul>`).join("");
@@ -276,7 +280,7 @@ function setLang(l){lang=l;document.documentElement.lang=l;try{localStorage.setI
 document.querySelectorAll("[data-lang]").forEach(b=>b.onclick=()=>setLang(b.dataset.lang));
 bookBtn.href=BOOKING_URL||`mailto:${EMAIL}?subject=Studio%20visit`;if(BOOKING_URL)bookBtn.target="_blank";
 if(typeof IMG!=="undefined"){portrait.src=IMG.portrait_blue;logo.src=IMG.logo_white;logoW.src=IMG.logo_white;igIcon.src=IMG.ig_icon}
-document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener("click",e=>{const id=a.getAttribute("href").slice(1);const t=id?document.getElementById(id):null;if(!t)return;e.preventDefault();const bar=document.querySelector(".bar");const y=t.getBoundingClientRect().top+window.scrollY-(bar?bar.offsetHeight:0)-8;window.scrollTo(0,id==="top"?0:y)}));
+document.addEventListener("click",e=>{const a=e.target.closest('a[href^="#"]');if(!a)return;const id=a.getAttribute("href").slice(1);const t=id?document.getElementById(id):null;if(!t)return;e.preventDefault();const bar=document.querySelector(".bar");const y=t.getBoundingClientRect().top+window.scrollY-(bar?bar.offsetHeight:0)-8;const go=()=>{const yy=t.getBoundingClientRect().top+window.scrollY-(bar?bar.offsetHeight:0)-8;window.scrollTo(0,id==="top"?0:yy)};go();setTimeout(go,350);setTimeout(go,900)});
 let start="en";try{start=localStorage.getItem("lang")||((navigator.language||"").toLowerCase().startsWith("ru")?"ru":"en")}catch(e){}
 setLang(start);
 </script>
